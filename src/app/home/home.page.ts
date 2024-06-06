@@ -29,6 +29,14 @@ export class HomePage {
       date: new Date().toISOString(),
       checked: false
     });
+    this.showForm();
+  }
+
+  addTask = false;
+
+  showForm() {
+    this.addTask = !this.addTask;
+    this.myTask = '';
   }
 
 }

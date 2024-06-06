@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
+import { CommonModule } from '@angular/common';
+
 export const firebaseConfig = {
-  apiKey: "AIzaSyABWtMFKDAOfCdcYHAz012_TjL1p8EFwl4",
-  authDomain: "test-firebase-3b5f2.firebaseapp.com",
-  projectId: "test-firebase-3b5f2",
-  storageBucket: "test-firebase-3b5f2.appspot.com",
-  messagingSenderId: "572603452989",
-  appId: "1:572603452989:web:f9e5656580acc724626454"
+  apiKey: "AIzaSyAallM8alOkifUYnlz6qswGrng4mfQSWqo",
+  authDomain: "todolist-ionic-60eee.firebaseapp.com",
+  projectId: "todolist-ionic-60eee",
+  storageBucket: "todolist-ionic-60eee.appspot.com",
+  messagingSenderId: "719131759550",
+  appId: "1:719131759550:web:3c6764291eb2c68f8f9fef"
 };
 
 @NgModule({
@@ -26,7 +28,8 @@ export const firebaseConfig = {
     IonicModule.forRoot(), 
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    CommonModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
