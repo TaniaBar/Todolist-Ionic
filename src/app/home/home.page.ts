@@ -57,4 +57,8 @@ export class HomePage {
     });
   }
 
+  changeCheckState(ev: any) {
+    this.afDB.object('Task/' + ev.key + '/checked/').set(ev.checked);
+  }
+
 }

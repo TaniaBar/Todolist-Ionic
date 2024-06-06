@@ -35,8 +35,10 @@
       <ion-item lines="none">
         <ion-label>
           <h2 *ngIf="!task.checked">{{ task.text }}</h2>
+          <h2 *ngIf="task.checked" style="text-decoration: line-through;">{{ task.text }}</h2>
           <p>{{ task.hour }}</p>
         </ion-label>
+        <ion-checkbox (ionChange)="changeCheckState(task)" color="success" [(ngModel)]="task.checked" slot="end"></ion-checkbox>
       </ion-item>
     </ion-card>
 
@@ -49,8 +51,6 @@
       <ion-icon name="close" slot="start"></ion-icon>
       Annuler
     </ion-button>
-
     
   </div>
-
 </ion-content>
