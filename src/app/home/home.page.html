@@ -31,6 +31,15 @@
       </ion-item>
     </ion-card>
 
+    <ion-card *ngFor="let task of tasks">
+      <ion-item lines="none">
+        <ion-label>
+          <h2 *ngIf="!task.checked">{{ task.text }}</h2>
+          <p>{{ task.hour }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
     <ion-button *ngIf="!addTask" (click)="showForm()" expand="block" class="add-button">
       <ion-icon name="add" slot="start"></ion-icon>
       Ajouter une tâche
