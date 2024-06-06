@@ -25,3 +25,28 @@
 #container a {
   text-decoration: none;
 }
+
+.pink-clouds {
+  padding: 1px;
+  height: 100%;
+  width: 100%;
+  background-image: url('../../assets/pink-clouds.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 80%;
+}
+
+h1 {
+  color: white;
+  margin-left: 20px;
+  font-size: 30px;
+}
+  
+h3 {
+  color: #e8e8e8;
+  margin-left: 20px;
+  margin-top: -7px;
+  font-size: medium;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}

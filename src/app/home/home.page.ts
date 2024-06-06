@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,27 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  currentDate: string;
+  myTask = '';
+
+  constructor(public afDB: AngularFireDatabase) {
+    const timeformat: Intl.DateTimeFormatOptions = {
+       weekday: 'short',
+       year: 'numeric',
+       month: 'short',
+       day: 'numeric',
+       hour12: false
+    };
+
+    this.currentDate = new Date().toLocaleTimeString('fr-FR', timeformat); 
+  }
+
+  addTaskToFirebase() {
+    this.afDB.list('Task/').push({
+      text: this.myTask,
+      date: new Date().toISOString(),
+      checked: false
+    });
+  }
 
 }
